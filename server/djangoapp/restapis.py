@@ -10,6 +10,7 @@ sentiment_analyzer_url = os.getenv(
     'http://localhost:5050/'
 )
 
+
 def get_request(endpoint, **kwargs):
     """
     Performs a GET request to a specified backend endpoint.
