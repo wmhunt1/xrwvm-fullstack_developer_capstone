@@ -24,14 +24,16 @@ def get_request(endpoint, **kwargs):
     """
     request_url = f"{backend_url}{endpoint}"
     print(f"GET from {request_url} with params {kwargs}")
-    
+
     try:
         response = requests.get(request_url, params=kwargs)
-        response.raise_for_status()  # Raise an exception for bad status codes (4xx or 5xx)
+        response.raise_for_status()
+        # Raise an exception for bad status codes (4xx or 5xx)
         return response.json()
     except requests.exceptions.RequestException as e:
         print(f"Network exception occurred: {e}")
         return None
+
 
 def analyze_review_sentiments(text):
     """
@@ -53,6 +55,7 @@ def analyze_review_sentiments(text):
     except requests.exceptions.RequestException as e:
         print(f"Network exception occurred: {e}")
         return None
+
 
 def post_review(data_dict):
     """
