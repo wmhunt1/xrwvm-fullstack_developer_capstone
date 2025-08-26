@@ -47,7 +47,7 @@ def analyze_review_sentiments(text):
     """
     request_url = f"{sentiment_analyzer_url}analyze/{text}"
     print(f"GET from {request_url}")
-    
+
     try:
         response = requests.get(request_url)
         response.raise_for_status()
@@ -69,7 +69,7 @@ def post_review(data_dict):
     """
     request_url = f"{backend_url}/insert_review"
     print(f"POST to {request_url}")
-    
+
     try:
         response = requests.post(request_url, json=data_dict)
         response.raise_for_status()
